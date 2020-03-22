@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 12340b9d4f7618b42a836a5c04b0c7f8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - CannibalLobster: {fileID: 3518279673197334763, guid: e8407093b734a614ab22af626d02cc00,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

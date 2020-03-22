@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 688a86bf3e568c1408989cfade05875a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - linerenderer: {fileID: 100000, guid: 4a2a4a21d82a176449c9682e09163e38, type: 3}
+  - pointer: {fileID: 100000, guid: 77a124365ef6bb84ab949f0db9d3eefd, type: 3}
+  - HolderPrefb: {instanceID: 0}
+  - holder: {fileID: 100000, guid: 3ea121332addeb544844cd92ab5415cd, type: 3}
+  - mat: {instanceID: 0}
+  - topValue: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
