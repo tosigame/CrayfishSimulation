@@ -32,7 +32,7 @@ public class LobsterRoots : MonoBehaviour
 
    virtual public void LobsterBirth()
     {
-        if (food >= 6 && transform.localScale.x >= 2)
+        if (food >= 5 && transform.localScale.x >= 2)
         {
             LobsterDeath();
             food = 0;
