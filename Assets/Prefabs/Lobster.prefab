@@ -138,8 +138,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lobsterPrefab: {fileID: 0}
-  food: 0
-  foodValue: 1
   movementDirection: {x: 0, y: 0, z: 0}
 --- !u!114 &-2444652752975338859
 MonoBehaviour:
@@ -153,3 +151,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eef17056e7362d43aafb6bef2a015fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  food: 0
+  foodPrefab: {fileID: 0}
+  foodValue: 1
+  infection: 0
+  minScaleSize: 0
+  xScaleIncrement: 0
+  lobsterGrow: {x: 0, y: 0, z: 0}

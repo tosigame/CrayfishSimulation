@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a58d451f91cb9a47a5efb30f4ffe0a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxScaleSize: 0
 --- !u!114 &6602569446032701826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,4 +166,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   food: 0
+  foodPrefab: {fileID: 0}
   foodValue: 1
+  infection: 1
+  minScaleSize: 0
+  xScaleIncrement: 0
+  lobsterGrow: {x: 0, y: 0, z: 0}

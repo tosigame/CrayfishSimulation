@@ -18,6 +18,7 @@ public class FoodCode : MonoBehaviour
             if (infectedState)
             {
                 other.gameObject.GetComponent<LobsterRoots>().infection = true;
+                other.gameObject.GetComponent<LobsterRoots>().IfInfectedLobster();
             }
             other.gameObject.GetComponent<LobsterRoots>().Eat();
         }

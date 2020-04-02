@@ -7,16 +7,17 @@ public class LobsterRoots : MonoBehaviour
     public int food;
     public GameObject foodPrefab;
     public int foodValue = 1;
-    float deathChance = 0.30f;
-    int counts = 0;
-    public bool infection = true;
+    public float deathChance = 0.30f;
+    public int counts ;
+    public bool infection;
     public float minScaleSize;
     public float xScaleIncrement;
     public Vector3 lobsterGrow; 
 
-    void Start()
+    public virtual void Start()
     {
-        InfectedLobster();
+        counts = 0;
+        IfInfectedLobster();
         xScaleIncrement = 0.01f;
         lobsterGrow = new Vector3(xScaleIncrement, 0, xScaleIncrement);
         minScaleSize = 3;
@@ -24,7 +25,7 @@ public class LobsterRoots : MonoBehaviour
         Invoke("LobsterDeath", 7f);
     }
     
-    virtual public void InfectedLobster()
+    virtual public void IfInfectedLobster()
     {
         
         if (infection == true)
@@ -47,7 +48,7 @@ public class LobsterRoots : MonoBehaviour
                     infection = !infection;
                 }
                 
-                Invoke("InfectedLobster",10f);
+                Invoke("IfInfectedLobster",10f);
             }
 
         }
@@ -56,8 +57,15 @@ public class LobsterRoots : MonoBehaviour
     public void LobsterDeath()
     {
         if (food <= 0)
-
+        {
+            if (infection == true)
+            {
+                GameObject.Find("Board 1").GetComponent<BoardManager>().SpawnInfectedFood(transform.position);
+                Destroy(gameObject);
+            }
             Destroy(gameObject);
+        }
+
         else
         {
             food = 0;

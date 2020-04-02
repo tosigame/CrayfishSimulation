@@ -201,4 +201,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba18d906eaccd042ae69187674c5252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infectedState: 1
+  infectedState: 0

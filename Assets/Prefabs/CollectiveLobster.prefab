@@ -219,7 +219,7 @@ MonoBehaviour:
   food: 0
   foodPrefab: {fileID: 0}
   foodValue: 1
-  infection: 1
+  infection: 0
   minScaleSize: 0
   xScaleIncrement: 0
   lobsterGrow: {x: 0, y: 0, z: 0}

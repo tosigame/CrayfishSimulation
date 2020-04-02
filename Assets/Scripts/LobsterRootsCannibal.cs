@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class LobsterRootsCannibal : LobsterRoots
 {
- 
+    
+    
 
+
+   public override void Start()
+    {
+        base.Start();
+        infection = true;
+        deathChance = 0.10f;
+    }
     public override void LobsterBirth()
     {
         if (food >= 10 && transform.localScale.x >= 2.5)
@@ -20,6 +28,7 @@ public class LobsterRootsCannibal : LobsterRoots
             }
         }
     }
+   
     override public void Eat()
     {
         food += foodValue;
