@@ -117,6 +117,13 @@ public class BoardManager : MonoBehaviour
             Instantiate(foodPrefab, BoardScaleVector(), Quaternion.identity);
         }
     }
+    public void SpawnInfectedFood(Vector3 spawnPosition)
+    {
+        spawnPosition.x += 2;
+        GameObject newFood = Instantiate(foodPrefab, spawnPosition, Quaternion.identity);
+        newFood.GetComponent<FoodCode>().infectedState = true;
+        newFood.GetComponent<FoodCode>().InfectionState();
+    }
     void FoodSpawn()
     {
         for (int i = 0; i < foodSpawnRate; i++)
