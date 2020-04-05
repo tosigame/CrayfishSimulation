@@ -26,6 +26,10 @@ public class LobsterRoots : MonoBehaviour
     }
     public void MakeInfection()
     {
+        if (infection == true)
+        {
+            return;
+        }
         infection = true;
         Debug.Log("Lobster infected");
         CheckInfection();

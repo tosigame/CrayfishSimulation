@@ -124,7 +124,7 @@ public class BoardManager : MonoBehaviour
         GameObject newFood = Instantiate(foodPrefab, spawnPosition, Quaternion.identity);
         
         newFood.GetComponent<FoodCode>().MakeInfection();
-        Debug.Log("Food infected");
+        
     }
     void FoodSpawn()
     {
