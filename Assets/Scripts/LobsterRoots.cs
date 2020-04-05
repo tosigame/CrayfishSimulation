@@ -27,6 +27,7 @@ public class LobsterRoots : MonoBehaviour
     public void MakeInfection()
     {
         infection = true;
+        Debug.Log("Lobster infected");
         CheckInfection();
     } 
     virtual public void CheckInfection()
@@ -34,7 +35,7 @@ public class LobsterRoots : MonoBehaviour
         
         if (infection == true)
         {
-           
+            Debug.Log("Positive to infection");
             if (Random.Range(0f, 1f) <= deathChance)
             {
                 LobsterDeath();
@@ -57,7 +58,7 @@ public class LobsterRoots : MonoBehaviour
     }
     public void CheckFood()
     {
-        if (food <= 0)
+        if (food <= 1)
         {
             LobsterDeath();
         }
@@ -74,7 +75,8 @@ public class LobsterRoots : MonoBehaviour
         
             if (infection == true)
             {
-                GameObject.Find("Board 1").GetComponent<BoardManager>().SpawnInfectedFood(transform.position);
+            Debug.Log("infected Death");
+            GameObject.Find("Board 1").GetComponent<BoardManager>().SpawnInfectedFood(transform.position);
                 
             }
             Destroy(gameObject);
