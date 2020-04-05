@@ -17,14 +17,14 @@ public class FoodCode : MonoBehaviour
             Destroy(gameObject);
             if (infectedState)
             {
-                other.gameObject.GetComponent<LobsterRoots>().infection = true;
-                other.gameObject.GetComponent<LobsterRoots>().IfInfectedLobster();
+               
+                other.gameObject.GetComponent<LobsterRoots>().MakeInfection();
             }
             other.gameObject.GetComponent<LobsterRoots>().Eat();
         }
       
     }
-    public void InfectionState()
+    public void MakeInfection()
     {
         //visual settings
         transform.GetChild(0).gameObject.SetActive(true);

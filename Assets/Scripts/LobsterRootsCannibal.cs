@@ -11,14 +11,15 @@ public class LobsterRootsCannibal : LobsterRoots
    public override void Start()
     {
         base.Start();
-        infection = true;
-        deathChance = 0.10f;
+        MakeInfection();
+
+
     }
     public override void LobsterBirth()
     {
         if (food >= 10 && transform.localScale.x >= 2.5)
         {
-            LobsterDeath();
+            CheckFood();
             food = 0;
             int quant = Random.Range(1, 4);
             for (int i = 0; i < quant; i++)
