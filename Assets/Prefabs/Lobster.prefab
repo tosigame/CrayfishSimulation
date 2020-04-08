@@ -153,8 +153,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   food: 0
   foodPrefab: {fileID: 0}
+  TestInfection: {fileID: 7814197397804227927, guid: 1d59cc730b794ac419234f30ce450b3d,
+    type: 3}
   foodValue: 1
-  infection: 0
+  counts: 0
   minScaleSize: 0
   xScaleIncrement: 0
   lobsterGrow: {x: 0, y: 0, z: 0}

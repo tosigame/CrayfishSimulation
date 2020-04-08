@@ -6,6 +6,8 @@ public class LobsterRoots : MonoBehaviour
 {
     public int food;
     public GameObject foodPrefab;
+    public GameObject TestInfection;
+
     public int foodValue = 1;
     private float deathChance = 0.10f;
     public int counts ;
@@ -28,13 +30,19 @@ public class LobsterRoots : MonoBehaviour
     {
         if (infection == true)
         {
+            Debug.Log("Already working");
             return;
         }
-        infection = true;
-        Debug.Log("Lobster infected");
-        CheckInfection();
+        else
+        {
+            infection = true;
+            GameObject infectionSympton = Instantiate(TestInfection, transform.position, Quaternion.identity);
+            infectionSympton.transform.SetParent(transform);
+            Debug.Log("Lobster infected");
+            CheckInfection();
+        }
     } 
-    virtual public void CheckInfection()
+    public void CheckInfection()
     {
         
         if (infection == true)
@@ -48,10 +56,10 @@ public class LobsterRoots : MonoBehaviour
             {
                 deathChance = deathChance * 2;
                 counts++;
-                if (counts < 3)
+                if (counts > 3)
                 {
-                    infection = !infection;
-                    counts--;
+                    infection = false;
+                    counts = 0;
                     deathChance = 0.1f;
                 }
                 

@@ -202,3 +202,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infectedState: 0
+  TestInfection: {fileID: 7814197397804227927, guid: 1d59cc730b794ac419234f30ce450b3d,
+    type: 3}
