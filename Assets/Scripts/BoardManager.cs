@@ -123,9 +123,10 @@ public class BoardManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
 
-
-            spawnPosition.x += 2;
-            GameObject newFood = Instantiate(foodPrefab, spawnPosition, Quaternion.identity);
+            spawnPosition.x += Random.Range(-5f, 5f);
+            spawnPosition.z += Random.Range(-5f, 5f);
+            
+            GameObject newFood = Instantiate(foodPrefab, spawnPosition , Quaternion.identity);
 
             newFood.GetComponent<FoodCode>().MakeInfection();
         }

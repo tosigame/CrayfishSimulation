@@ -7,14 +7,15 @@ public class LobsterRoots : MonoBehaviour
     public int food;
     public GameObject foodPrefab;
     public GameObject TestInfection;
-
+    
     public int foodValue = 1;
-    private float deathChance = 0.10f;
+    protected float deathChance = 0.80f;
     public int counts ;
     private bool infection;
     public float minScaleSize;
     public float xScaleIncrement;
-    public Vector3 lobsterGrow; 
+    public Vector3 lobsterGrow;
+    private Vector3 infectionSize;
 
     public virtual void Start()
     {
@@ -22,12 +23,15 @@ public class LobsterRoots : MonoBehaviour
        
         xScaleIncrement = 0.01f;
         lobsterGrow = new Vector3(xScaleIncrement, 0, xScaleIncrement);
+        infectionSize = new Vector3(1, 0.3f, 1);
+        
         minScaleSize = 3;
         
         Invoke("CheckFood", 7f);
     }
     public void MakeInfection()
     {
+
         if (infection == true)
         {
             Debug.Log("Already working");
@@ -35,9 +39,15 @@ public class LobsterRoots : MonoBehaviour
         }
         else
         {
+            if (transform.childCount>0)
+            {
+                Debug.Log("Ayiayai We have childs");
+            }
             infection = true;
             GameObject infectionSympton = Instantiate(TestInfection, transform.position, Quaternion.identity);
             infectionSympton.transform.SetParent(transform);
+            infectionSympton.transform.localScale = infectionSize;
+           
             Debug.Log("Lobster infected");
             CheckInfection();
         }
@@ -54,16 +64,19 @@ public class LobsterRoots : MonoBehaviour
             }
             else
             {
-                deathChance = deathChance * 2;
+                
                 counts++;
                 if (counts > 3)
                 {
                     infection = false;
                     counts = 0;
-                    deathChance = 0.1f;
+                    Destroy(transform.GetChild(0).gameObject);
                 }
-                
-                Invoke("CheckInfection",10f);
+                else
+                {
+
+                    Invoke("CheckInfection", 10f);
+                }
             }
 
         }
@@ -106,6 +119,10 @@ public class LobsterRoots : MonoBehaviour
             for (int i = 0; i < 1; i++)
             {
                 Instantiate(gameObject);
+                if (transform.childCount > 0)
+                {
+                    Debug.Log("Child We have childs");
+                }
                 transform.localScale = Vector3.one;
             }
            
