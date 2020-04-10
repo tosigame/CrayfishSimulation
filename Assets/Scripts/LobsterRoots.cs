@@ -8,6 +8,7 @@ public class LobsterRoots : MonoBehaviour
     public GameObject foodPrefab;
     public GameObject TestInfection;
     
+    
     public int foodValue = 1;
     protected float deathChance = 0.80f;
     public int counts ;
@@ -39,11 +40,17 @@ public class LobsterRoots : MonoBehaviour
         }
         else
         {
-            if (transform.childCount>0)
+            foreach ( Transform child in transform)
+            {
+                Destroy(child.gameObject);
+            }
+            if (transform.childCount > 0)
             {
                 Debug.Log("Ayiayai We have childs");
+
             }
             infection = true;
+            
             GameObject infectionSympton = Instantiate(TestInfection, transform.position, Quaternion.identity);
             infectionSympton.transform.SetParent(transform);
             infectionSympton.transform.localScale = infectionSize;
@@ -118,12 +125,8 @@ public class LobsterRoots : MonoBehaviour
             food = 0;
             for (int i = 0; i < 1; i++)
             {
-                Instantiate(gameObject);
-                if (transform.childCount > 0)
-                {
-                    Debug.Log("Child We have childs");
-                }
-                transform.localScale = Vector3.one;
+                GameObject newLobster = Instantiate(gameObject);
+                newLobster.transform.localScale = Vector3.one;
             }
            
         }

@@ -15,8 +15,8 @@ public class LobsterRootsCollective : LobsterRoots
             int quant = Random.Range(1, 2);
             for (int i = 0; i < quant; i++)
             {
-                Instantiate(gameObject);
-                transform.localScale = Vector3.one;
+                GameObject newLobster = Instantiate(gameObject);
+                newLobster.transform.localScale = Vector3.one;
             }
         }
 
