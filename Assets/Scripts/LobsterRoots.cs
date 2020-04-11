@@ -56,7 +56,7 @@ public class LobsterRoots : MonoBehaviour
             infectionSympton.transform.localScale = infectionSize;
            
             Debug.Log("Lobster infected");
-            CheckInfection();
+            Invoke("CheckInfection", 5f);
         }
     } 
     public void CheckInfection()
@@ -107,7 +107,7 @@ public class LobsterRoots : MonoBehaviour
         
             if (infection == true)
             {
-            Debug.Log("infected Death");
+            Debug.Log("infected Death " + counts);
             GameObject.Find("Board 1").GetComponent<BoardManager>().SpawnInfectedFood(transform.position);
                 
             }

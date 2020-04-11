@@ -11,7 +11,7 @@ public class LobsterRootsCannibal : LobsterRoots
    public override void Start()
     {
         base.Start();
-        deathChance = 0.05f;
+        deathChance = 0.035f;
         MakeInfection();
 
 
