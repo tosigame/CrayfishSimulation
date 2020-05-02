@@ -6,14 +6,11 @@ public class FoodCode : MonoBehaviour
 {
     public bool infectedState = false;
     public GameObject TestInfection;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  
+   
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag!="Food")
+        if (other.gameObject.tag!="Food" && other.gameObject.tag != "InfectionArea")
         {
             Destroy(gameObject);
             if (infectedState)
@@ -27,15 +24,14 @@ public class FoodCode : MonoBehaviour
     }
     public void MakeInfection()
     {
-        //visual settings
+     
         transform.GetChild(0).gameObject.SetActive(true);
         infectedState = true;
         GameObject infectionSympton = Instantiate(TestInfection, transform.position, Quaternion.identity);
         infectionSympton.transform.SetParent(transform);
-    }
-    // Update is called once per frame
-    void Update()
-    {
         
+       
+
     }
+   
 }

@@ -7,8 +7,8 @@ public class LobsterRoots : MonoBehaviour
     public int food;
     public GameObject foodPrefab;
     public GameObject TestInfection;
-    
-    
+    public GameObject InfectionArea;
+
     public int foodValue = 1;
     protected float deathChance = 0.80f;
     public int counts ;
@@ -54,7 +54,9 @@ public class LobsterRoots : MonoBehaviour
             GameObject infectionSympton = Instantiate(TestInfection, transform.position, Quaternion.identity);
             infectionSympton.transform.SetParent(transform);
             infectionSympton.transform.localScale = infectionSize;
-           
+            GameObject infectionArea = Instantiate(InfectionArea, transform.position, Quaternion.identity);
+            infectionArea.transform.SetParent(transform);
+
             Debug.Log("Lobster infected");
             Invoke("CheckInfection", 5f);
         }

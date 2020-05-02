@@ -204,3 +204,5 @@ MonoBehaviour:
   infectedState: 0
   TestInfection: {fileID: 7814197397804227927, guid: 1d59cc730b794ac419234f30ce450b3d,
     type: 3}
+  InfectionArea: {fileID: 4812018266228819543, guid: 6f167c5d8fd81d74582a45d55a57f203,
+    type: 3}

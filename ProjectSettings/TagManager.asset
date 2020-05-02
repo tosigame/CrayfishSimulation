@@ -8,6 +8,8 @@ TagManager:
   - Lobster
   - CollectiveLobster
   - CannibalLobster
+  - pointer
+  - InfectionArea
   layers:
   - Default
   - TransparentFX
